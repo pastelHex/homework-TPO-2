@@ -28,13 +28,13 @@ public class JSONParser {
 		while (json_txt.length() > 0 && i < json_txt.length()) {
 			if (json_txt.charAt(i) == ',') {
 				i++;
-				System.out.print(",");
+				//System.out.print(",");
 			}
 			if (json_txt.charAt(i) == '"') {
 				i++;
 				// System.out.print("\"");
 				while (json_txt.charAt(i) != '\"') {
-					System.out.print("" + json_txt.charAt(i));
+					//System.out.print("" + json_txt.charAt(i));
 					sb.append(json_txt.charAt(i));
 					i++;
 				}
@@ -45,14 +45,14 @@ public class JSONParser {
 
 			if (json_txt.charAt(i) == ':') {
 				i++;
-				System.out.print(":");
+				//System.out.print(":");
 				if (json_txt.charAt(i) == '"') {
 					// textvalue
 					// System.out.print("\"");
 					i++;
 					while (json_txt.charAt(i) != '"') {
 						sb.append(json_txt.charAt(i));
-						System.out.print("" + json_txt.charAt(i));
+						//System.out.print("" + json_txt.charAt(i));
 						i++;
 					}
 					i++;
@@ -63,7 +63,7 @@ public class JSONParser {
 				}
 				if (json_txt.charAt(i) == '[') {
 					// tablevalue
-					System.out.print("[");
+					//System.out.print("[");
 					i++;
 					JSONTable table = new JSONTable(key);
 					table = (JSONTable) get_json_node_from_string(json_txt, table);
@@ -72,7 +72,7 @@ public class JSONParser {
 				}
 				if (json_txt.charAt(i) == '{') {
 					// setvalue
-					System.out.print("{");
+					//System.out.print("{");
 					i++;
 					JSONSet set = new JSONSet(key);
 					set = (JSONSet) get_json_node_from_string(json_txt, set);
@@ -82,7 +82,7 @@ public class JSONParser {
 				if (Character.isDigit(json_txt.charAt(i)) || json_txt.charAt(i) == '-') {
 					sb = new StringBuilder();
 					do {
-						System.out.print(json_txt.charAt(i));
+						//System.out.print(json_txt.charAt(i));
 						sb.append(json_txt.charAt(i));
 						i++;
 					} while (Character.isDigit(json_txt.charAt(i)) || json_txt.charAt(i) == '.');
@@ -94,7 +94,7 @@ public class JSONParser {
 				if (Character.isAlphabetic(json_txt.charAt(i))) {
 					sb = new StringBuilder();
 					do {
-						System.out.print(json_txt.charAt(i));
+						//System.out.print(json_txt.charAt(i));
 						sb.append(json_txt.charAt(i));
 						i++;
 					} while (Character.isAlphabetic(json_txt.charAt(i)));
@@ -106,7 +106,7 @@ public class JSONParser {
 			}
 			if (json_txt.charAt(i) == '{') {
 				// setvalue
-				System.out.print("{");
+				//System.out.print("{");
 				i++;
 				JSONSet set = new JSONSet(key);
 				// System.out.println(json_txt.substring(i));

@@ -28,7 +28,7 @@ public class HTMLParsedDOC extends Parser {
 		super(dtd);
 	}
 	
-	@Override
+/*	@Override
 	protected void handleStartTag(TagElement tag) {
 		if(tag==null)
 			return;
@@ -44,10 +44,10 @@ public class HTMLParsedDOC extends Parser {
 				path2[i-1]=path[i];
 			}
 			String deeper = Arrays.stream(path2).collect(Collectors.joining(delimeter.subSequence(0, delimeter.length()))).toString();
-			System.out.println(deeper);
+			//System.out.println(deeper);
 			getTag(deeper, delimeter);
 		}
 		return null;
-	}
+	}*/
 
 }

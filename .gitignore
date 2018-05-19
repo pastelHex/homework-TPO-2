@@ -1,10 +1,2 @@
-# Compiled source #
-###################
-*.com
+/bin/
 *.class
-*.dll
-*.exe
-*.o
-*.so
-*.jar
-*.exe.stackdump

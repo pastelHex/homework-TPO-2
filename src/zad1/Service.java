@@ -43,6 +43,7 @@ public class Service {
 	String fixerRates = "http://data.fixer.io/api/latest?access_key=001ad8d974f6c65d02c3d1b456c6164f";
 	String NBPSiteA = "http://www.nbp.pl/kursy/kursya.html";
 	String NBPSiteB = "http://www.nbp.pl/kursy/kursyb.html";
+	JSONDocument weatherJSONDoc;
 
 	Map<String, String> currencyMapping_eng;// country name - currency code
 	Map<String, Double> currencyMapping_pol;// currency code - value in plns
@@ -124,12 +125,17 @@ public class Service {
 				+ "&mode=json&appid=" + this.weatherAPIKEY);
 		return json;
 	}
+	
+	public String getWeatherAtribute(String path) {
+		return JSONParser.get_node(weatherJSONDoc, path).toString();
+	}
 
 	public String getWeatherPreety(String country, String city) {
 		this.country = country;
 		String json = getWeather(city);
-		System.out.println(json);
+		//System.out.println(json);
 		JSONDocument doc = new JSONDocument("document");
+		weatherJSONDoc = doc;
 		// JSONParser.get_json_node_from_string(json, doc);
 		JSONParser.generate_document(json, doc);
 		// System.out.println(JSONParser.get_node(doc, "document/weather/main@0"));

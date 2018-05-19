@@ -16,7 +16,6 @@ public class Main {
     Double rate2 = s.getNBPRate();
     // ...
     // część uruchamiająca GUI
-    System.out.println("\n"+weatherJson);
     Controller c = new Controller();
   }
 }
